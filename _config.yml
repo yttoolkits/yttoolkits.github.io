@@ -51,3 +51,12 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+defaults:
+  - scopes:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+permalink: /:categories/:title/
