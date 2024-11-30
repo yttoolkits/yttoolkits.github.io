@@ -1,0 +1,180 @@
+---
+layout: page
+title: Tag Generator
+permalink: /tag-genrator/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Tags Generator</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <style>
+      .loading {
+        font-size: 18px;
+        color: #888;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .blueHeader {
+            background-color: #0a74da;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .blueHeader h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        .content-section {
+            margin-bottom: 2rem;
+        }
+        h2 {
+            color: #0a74da;
+            font-size: 1.75rem;
+        }
+        p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0a74da;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+        }
+        .code-block {
+            background-color: #f7f7f7;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>YouTube Tags Generator</h1>
+      <input
+        type="text"
+        id="titleInput"
+        placeholder="Enter your video title here ..."
+      />
+      <button id="generateTagsButton">Generate Tags</button>
+
+      <div id="result" style="display: none">
+        <button id="copyAllButton">Copy All Tags</button>
+        <div id="tagsResult"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <header class="blueHeader" >
+        <h1>YouTube Tags Generator: Boost Your Video SEO with Ease!</h1>
+     </header>
+    
+    <div>
+        <section class="content-section">
+            <h2>What is the YouTube Tags Generator Tool?</h2>
+            <p>
+                Our <strong>YouTube Tags Generator</strong> is a free, easy-to-use tool designed for content creators who want to
+                take their SEO game to the next level. Just enter your video title or topic, and the tool generates a list of
+                relevant, high-performing tags instantly.
+            </p>
+        </section>
+    
+        <section class="content-section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Instant Tag Generation</strong>: Enter your video title, and get a list of optimized tags tailored to your content.</li>
+                <li><strong>Single-Tag Copy Functionality</strong>: Click on any generated tag to copy it directly to your clipboard — no extra steps required.</li>
+                <li><strong>Copy All Tags with One Click</strong>: A dedicated "Copy All" button allows you to copy the entire list of tags at once, saving time and effort.</li>
+                <li><strong>SEO-Optimized Tags</strong>: The generated tags are curated to improve your video’s search rankings on YouTube.</li>
+            </ul>
+        </section>
+    
+        <section class="content-section">
+            <h2>How to Use the YouTube Tags Generator?</h2>
+            <p>Using the tool is a breeze! Follow these simple steps:</p>
+            <ol>
+                <li><strong>Enter Your Video Title</strong>: In the search box, type in your video’s title or topic.</li>
+                <li><strong>Get Your Tags</strong>: Click the "Generate Tags" button, and in seconds, a list of relevant tags will appear.</li>
+                <li><strong>Copy a Single Tag</strong>: Want to add a specific tag to your video? Just click on any tag in the list, and it will be automatically copied to your clipboard.</li>
+                <li><strong>Copy All Tags</strong>: Use the "Copy All Tags" button to copy all the generated tags at once.</li>
+            </ol>
+        </section>
+    
+        <section class="content-section">
+            <h2>Why Are Tags Important for YouTube SEO?</h2>
+            <p>
+                Tags are metadata that help YouTube understand your video’s context and match it with relevant searches. Even
+                though YouTube places more emphasis on titles and descriptions, tags remain an essential component for:
+            </p>
+            <ul>
+                <li><strong>Boosting Discoverability</strong>: Helps your video appear in search results for related keywords.</li>
+                <li><strong>Increasing Reach</strong>: Ensures your content reaches the right audience.</li>
+                <li><strong>Ranking for Variations</strong>: Covers different ways users might search for your topic.</li>
+            </ul>
+        </section>
+    
+        <section class="content-section">
+            <h2>How This Tool Helps You</h2>
+            <ul>
+                <li><strong>Saves Time</strong>: No more spending hours researching tags manually.</li>
+                <li><strong>Improves SEO</strong>: Generates high-quality tags that align with YouTube’s algorithm.</li>
+                <li><strong>User-Friendly</strong>: Click-to-copy features make it effortless to integrate tags into your video uploads.</li>
+            </ul>
+        </section>
+    
+        <section class="content-section">
+            <h2>Pro Tip: Optimize Beyond Tags</h2>
+            <p>While tags are essential, they are only one piece of the puzzle. To maximize your YouTube SEO, focus on:</p>
+            <ul>
+                <li><strong>Compelling Titles</strong>: Use the main keyword in your title.</li>
+                <li><strong>Detailed Descriptions</strong>: Explain your video content in the description and include relevant keywords.</li>
+                <li><strong>Custom Thumbnails</strong>: Create attractive, clickable thumbnails to increase your CTR (click-through rate).</li>
+            </ul>
+        </section>
+    
+        <section class="content-section">
+            <h2>Why Choose Our Tool?</h2>
+            <p>
+                Unlike other tag generators, our tool offers seamless functionality to copy individual tags or all tags at once.
+                It’s built with creators in mind, making the tag optimization process simple and effective.
+            </p>
+            <a href="#" class="btn">Start Generating Tags Now!</a>
+        </section>
+    </div>
+    
+    </div>
+
+    <script src="/assets/js/tag-genrator.js"></script>
+  </body>
+</html>
