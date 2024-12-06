@@ -3,175 +3,278 @@ layout: page
 title: Image Drop & Download
 permalink: /image-drop-and-download/
 ---
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Upload and Download</title>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Upload and Download</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <style>
-    .toolBody {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
-    .drop-area {
-      border: 2px dashed #4CAF50;
-      padding: 30px;
-      margin: auto;
-      margin-bottom: 20px;
-      cursor: pointer;
-      width: 85%;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #4CAF50;
-      font-size: 18px;
-      border-radius: 30px;
-    }
-    .preview {
-      max-width: 100%;
-      max-height: 300px;
-      display: none;
-      margin-top: 20px;
-    }
-    .download-btn {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      display: none;
-      margin-top: 20px;
-    }
-    .download-btn:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
+    <style>
+      .toolBody {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        flex-direction: column; /* Stack content vertically */
+      }
 
-<div class="toolBody">
-    <div class="container">
+      .container {
+        box-sizing: border-box;
+        overflow-y: auto; /* Enable vertical scroll when content overflows */
+      }
+
+      .drop-area {
+        border: 2px dashed #4caf50;
+        padding: 30px;
+        margin: auto;
+        margin-bottom: 20px;
+        cursor: pointer;
+        width: 85%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #4caf50;
+        font-size: 18px;
+        border-radius: 30px;
+      }
+
+      .paste-tip {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-size: 16px;
+        text-align: center;
+        width: 80%;
+        margin: 10px auto;
+        display: none;
+      }
+
+      .preview {
+        max-width: 100%;
+        max-height: 300px;
+        display: none;
+        margin-top: 20px;
+      }
+
+      .download-btn {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        display: none;
+        margin-top: 20px;
+      }
+
+      .download-btn:hover {
+        background-color: #45a049;
+      }
+
+      body {
+        overflow-y: auto; /* Enable scrolling if needed */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolBody">
+      <div class="container">
         <h2>Upload or Drag & Drop an Image</h2>
         <div class="drop-area" id="drop-area">
-          Drop an image here or click to select
+          Drop an image here or click to select or paste
         </div>
-        <input type="file" id="file-input" style="display: none;" />
-        <img id="image-preview" class="preview" alt="Image Preview">
+        <input type="file" id="file-input" style="display: none" />
+        <img id="image-preview" class="preview" alt="Image Preview" />
         <a id="download-link" class="download-btn" download>Download Image</a>
       </div>
-</div>
+    </div>
 
-<div class="guide-section container">
-    <h2>How to Use ImageDrop</h2>
-    <p><strong>ImageDrop</strong> is a simple and powerful tool that allows you to upload, preview, and download images in seconds. Whether you need to drag and drop an image, select it from your device, or even paste an image from your clipboard, this tool makes image management effortless.</p>
-  
-    <h3>Step-by-Step Guide</h3>
-    <ol>
-      <li><strong>Upload or Select an Image:</strong>
-        <ul>
-          <li><strong>Drag and Drop:</strong> Drag an image file from your computer and drop it into the drop area.</li>
-          <li><strong>Select an Image:</strong> Click the "Drop an image here" area to open the file dialog, then select an image from your device.</li>
-          <li><strong>Paste an Image:</strong> If you've copied an image to your clipboard, press <strong>Ctrl+V</strong> (or <strong>Cmd+V</strong> on Mac) to paste it into the tool.</li>
-        </ul>
-      </li>
-      <li><strong>View Your Image Preview:</strong> Once the image is uploaded, a preview of the image will appear below the drop area. This allows you to verify that you've selected the correct image.</li>
-      <li><strong>Download the Image:</strong> After the image preview appears, a <strong>Download</strong> button will be displayed. Click it to download the image with its original file extension.</li>
-    </ol>
-  
-    <h3>Why Choose ImageDrop?</h3>
-    <ul>
-      <li><strong>Ease of Use:</strong> No sign-up required. Simply upload, preview, and download your images in seconds.</li>
-      <li><strong>Multiple Upload Options:</strong> Use drag and drop, file selection, or clipboard pasting for flexibility.</li>
-      <li><strong>Quick and Simple:</strong> An intuitive interface that works for everyone, from beginners to professionals.</li>
-      <li><strong>Preserve Image Extensions:</strong> Download images with their original file extensions, ensuring the best compatibility with other platforms.</li>
-    </ul>
-  
-    <h3>Troubleshooting</h3>
-    <p>If you experience any issues with the tool, here are some common solutions:</p>
-    <ul>
-      <li><strong>Invalid File Format:</strong> If the tool doesn't recognize your image, ensure that the file is a valid image format (e.g., JPG, PNG, GIF).</li>
-      <li><strong>No Preview:</strong> If the image isn't displaying in the preview section, try uploading a different image or refreshing your browser.</li>
-    </ul>
-  
-    <h3>SEO-Optimized Image Management</h3>
-    <p>ImageDrop ensures your images maintain their original extensions when downloading, making it perfect for SEO. Whether you're managing product images for your online store or images for your blog, maintaining image quality and proper file extensions is crucial for search engine ranking.</p>
-  </div>
+    <div class="guide-section container">
+      <h2>How to Use ImageDrop</h2>
+      <p>
+        <strong>ImageDrop</strong> is a simple and powerful tool that allows you
+        to upload, preview, and download images in seconds. Whether you need to
+        drag and drop an image, select it from your device, or even paste an
+        image from your clipboard, this tool makes image management effortless.
+      </p>
 
-<script>
-  const dropArea = document.getElementById('drop-area');
-  const fileInput = document.getElementById('file-input');
-  const imagePreview = document.getElementById('image-preview');
-  const downloadLink = document.getElementById('download-link');
+      <h3>Step-by-Step Guide</h3>
+      <ol>
+        <li>
+          <strong>Upload or Select an Image:</strong>
+          <ul>
+            <li>
+              <strong>Drag and Drop:</strong> Drag an image file from your
+              computer and drop it into the drop area.
+            </li>
+            <li>
+              <strong>Select an Image:</strong> Click the "Drop an image here"
+              area to open the file dialog, then select an image from your
+              device.
+            </li>
+            <li>
+              <strong>Paste an Image:</strong> If you've copied an image to your
+              clipboard, press <strong>Ctrl+V</strong> (or
+              <strong>Cmd+V</strong> on Mac) to paste it into the tool.
+            </li>
+          </ul>
+        </li>
+        <!-- Highlight the CTRL+V feature -->
+        <div
+          style="
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          <p>
+            <strong>Tip:</strong> You can also use the
+            <strong>CTRL+V</strong> (or <strong>Cmd+V</strong> on Mac) key
+            combination to easily paste an image directly from your clipboard
+            into this tool. Try it out!
+          </p>
+        </div>
+        <li>
+          <strong>View Your Image Preview:</strong> Once the image is uploaded,
+          a preview of the image will appear below the drop area. This allows
+          you to verify that you've selected the correct image.
+        </li>
+        <li>
+          <strong>Download the Image:</strong> After the image preview appears,
+          a <strong>Download</strong> button will be displayed. Click it to
+          download the image with its original file extension.
+        </li>
+      </ol>
 
-  // Trigger file input when drop area is clicked
-  dropArea.addEventListener('click', () => {
-    fileInput.click();
-  });
+      <h3>Why Choose ImageDrop?</h3>
+      <ul>
+        <li>
+          <strong>Ease of Use:</strong> No sign-up required. Simply upload,
+          preview, and download your images in seconds.
+        </li>
+        <li>
+          <strong>Multiple Upload Options:</strong> Use drag and drop, file
+          selection, or clipboard pasting for flexibility.
+        </li>
+        <li>
+          <strong>Quick and Simple:</strong> An intuitive interface that works
+          for everyone, from beginners to professionals.
+        </li>
+        <li>
+          <strong>Preserve Image Extensions:</strong> Download images with their
+          original file extensions, ensuring the best compatibility with other
+          platforms.
+        </li>
+      </ul>
 
-  // Handle image drop
-  dropArea.addEventListener('dragover', (event) => {
-    event.preventDefault();
-    dropArea.style.backgroundColor = '#e0e0e0';
-  });
+      <h3>Troubleshooting</h3>
+      <p>
+        If you experience any issues with the tool, here are some common
+        solutions:
+      </p>
+      <ul>
+        <li>
+          <strong>Invalid File Format:</strong> If the tool doesn't recognize
+          your image, ensure that the file is a valid image format (e.g., JPG,
+          PNG, GIF).
+        </li>
+        <li>
+          <strong>No Preview:</strong> If the image isn't displaying in the
+          preview section, try uploading a different image or refreshing your
+          browser.
+        </li>
+      </ul>
 
-  dropArea.addEventListener('dragleave', () => {
-    dropArea.style.backgroundColor = 'transparent';
-  });
+      <h3>SEO-Optimized Image Management</h3>
+      <p>
+        ImageDrop ensures your images maintain their original extensions when
+        downloading, making it perfect for SEO. Whether you're managing product
+        images for your online store or images for your blog, maintaining image
+        quality and proper file extensions is crucial for search engine ranking.
+      </p>
+    </div>
 
-  dropArea.addEventListener('drop', (event) => {
-    event.preventDefault();
-    dropArea.style.backgroundColor = 'transparent';
-    handleImage(event.dataTransfer.files[0]);
-  });
+    <script>
+      const dropArea = document.getElementById("drop-area");
+      const fileInput = document.getElementById("file-input");
+      const imagePreview = document.getElementById("image-preview");
+      const downloadLink = document.getElementById("download-link");
+      const pasteTip = document.getElementById("paste-tip");
 
-  // Handle image selection via file input
-  fileInput.addEventListener('change', (event) => {
-    handleImage(event.target.files[0]);
-  });
+      // Trigger file input when drop area is clicked
+      dropArea.addEventListener("click", () => {
+        fileInput.click();
+      });
 
-  // Handle image paste (Ctrl+V)
-  document.addEventListener('paste', (event) => {
-    const clipboardItems = event.clipboardData.items;
-    for (let i = 0; i < clipboardItems.length; i++) {
-      const item = clipboardItems[i];
-      if (item.type.startsWith('image/')) {
-        const file = item.getAsFile();
-        handleImage(file);
+      // Handle image drop
+      dropArea.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropArea.style.backgroundColor = "#e0e0e0";
+      });
+
+      dropArea.addEventListener("dragleave", () => {
+        dropArea.style.backgroundColor = "transparent";
+      });
+
+      dropArea.addEventListener("drop", (event) => {
+        event.preventDefault();
+        dropArea.style.backgroundColor = "transparent";
+        handleImage(event.dataTransfer.files[0]);
+      });
+
+      // Handle image selection via file input
+      fileInput.addEventListener("change", (event) => {
+        handleImage(event.target.files[0]);
+      });
+
+      // Handle image paste (Ctrl+V)
+      document.addEventListener("paste", (event) => {
+        const clipboardItems = event.clipboardData.items;
+        for (let i = 0; i < clipboardItems.length; i++) {
+          const item = clipboardItems[i];
+          if (item.type.startsWith("image/")) {
+            const file = item.getAsFile();
+            handleImage(file);
+          }
+        }
+      });
+
+      function handleImage(file) {
+        if (file && file.type.startsWith("image/")) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            // Display the image preview
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = "block";
+
+            // Set the download link
+            const extension = file.name.split(".").pop();
+            downloadLink.href = e.target.result;
+            downloadLink.download = `image.${extension}`;
+            downloadLink.style.display = "inline-block";
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          alert("Please select a valid image file.");
+        }
       }
-    }
-  });
 
-  function handleImage(file) {
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        // Display the image preview
-        imagePreview.src = e.target.result;
-        imagePreview.style.display = 'block';
-        
-        // Set the download link
-        const extension = file.name.split('.').pop();
-        downloadLink.href = e.target.result;
-        downloadLink.download = `image.${extension}`;
-        downloadLink.style.display = 'inline-block';
+      // Show paste tip when the page loads
+      window.onload = function () {
+        pasteTip.style.display = "block";
       };
-
-      reader.readAsDataURL(file);
-    } else {
-      alert('Please select a valid image file.');
-    }
-  }
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
